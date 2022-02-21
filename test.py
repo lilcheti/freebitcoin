@@ -1,5 +1,6 @@
 import asyncio
 from telethon import TelegramClient,events
+import config
 k=5
 
 level = 0
@@ -7,8 +8,8 @@ netwin=30
 bet=30
 loss=0
 # Remember to use your own values from my.telegram.org!
-api_id = 17501677
-api_hash = 'ee61461e144e8a59824cf5adb6eee60d'
+api_id = config.api_id
+api_hash = config.api_hash
 client = TelegramClient('an', api_id, api_hash)
 
 
