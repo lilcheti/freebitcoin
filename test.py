@@ -1,4 +1,5 @@
 import asyncio
+from email import message
 from telethon import TelegramClient,events
 import config
 k=5
@@ -12,7 +13,17 @@ api_id = config.api_id
 api_hash = config.api_hash
 client = TelegramClient('an', api_id, api_hash)
 
-
+@client.on(events.NewMessage(from_users="dopeassweed"))
+async def handler(event):
+    print(event.message.message)
+    if(event.message.message=='stop'):
+        await client.disconnect()
+    elif(event.message.message=='reset'):
+        global loss,level,bet,netwin
+        level = 0
+        netwin=30
+        bet=30
+        loss=0
 
 @client.on(events.NewMessage(from_users="lntxbot",pattern="(?i)You've lost.+"))
 async def handler(event):
