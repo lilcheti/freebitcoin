@@ -12,7 +12,7 @@
     game.onBet = function () {
       game.bet(config.bet.value, config.payout.value).then(function(payout) {
         if (payout > 1) {
-          log.success("lvl"+config.level.value+" We won, netwin " + config.netwin.value + "sats!");
+          log.success("We won, netwin " + config.netwin.value + "sats!");
           config.level.value = 0;
           config.netwin.value=10;
           config.bet.value=10;
