@@ -10,7 +10,7 @@ client = TelegramClient(StringSession(session), api_id, api_hash)
 
 async def main():
     for i in range(100):
-        await client.send_message('kirtoharchikose', '/tip 10', reply_to=255,schedule=timedelta(minutes=60+60*i) )
+        await client.send_message('kirtoharchikose', '/tip 10', reply_to=255,schedule=timedelta(minutes=15*i) )
 
 with client:
     client.loop.run_until_complete(main())
