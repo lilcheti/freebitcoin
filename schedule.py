@@ -1,7 +1,7 @@
 from telethon import TelegramClient
 from telethon.sessions import StringSession
 from datetime import timedelta
-import config,sys
+import sys
 # Remember to use your own values from my.telegram.org!
 session= os.environ.get("SESSION")
 api_id = os.environ.get("API_ID")
