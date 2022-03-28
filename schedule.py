@@ -1,10 +1,12 @@
 from telethon import TelegramClient
+from telethon.sessions import StringSession
 from datetime import timedelta
 import config
 # Remember to use your own values from my.telegram.org!
-api_id = config.api_id
-api_hash = config.api_hash
-client = TelegramClient('an', api_id, api_hash)
+session= os.environ.get("SESSION")
+api_id = os.environ.get("API_ID")
+api_hash = os.environ.get("API_HASH")
+client = TelegramClient(StringSession(session), api_id, api_hash)
 
 async def main():
     for i in range(100):
